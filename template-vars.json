@@ -1,42 +1,76 @@
 {
-  "ADMIN_PASSWORD": {
-    "value": "${{secret(16)}}",
-    "description": "REQUIRED. Admin password for RCON and REST API access. Auto-generated per deployment — copy the generated value from the service's Variables tab after deploy. Change it to your own to keep access stable across redeploys."
-  },
-  "PLAYERS": {
-    "defaultValue": "16",
-    "description": "Maximum number of players allowed to connect simultaneously (1-32). Each player slot consumes additional memory — 4GB RAM recommended for 16+ players."
-  },
-  "SERVER_NAME": {
-    "defaultValue": "My Palworld Server",
-    "description": "Name shown in the Palworld server browser. Leave as-is for default or customize to help friends find your server."
-  },
-  "SERVER_PASSWORD": {
-    "value": null,
-    "description": "Optional password required to join the server. Leave empty for a public server, or set a password for private access."
-  },
-  "COMMUNITY": {
-    "defaultValue": "true",
-    "description": "Show this server in the public server browser. Set to false to hide from listings (players can still connect via IP)."
-  },
-  "RCON_ENABLED": {
-    "defaultValue": "false",
-    "description": "Enable remote console (RCON) access. Required for programmatic server management and player moderation tools."
-  },
-  "BACKUP_ENABLED": {
-    "defaultValue": "true",
-    "description": "Enable automated world backups to the persistent volume. Backups run on a daily schedule by default (configurable via BACKUP_CRON_EXPRESSION)."
-  },
-  "DELETE_OLD_BACKUPS": {
-    "defaultValue": "false",
-    "description": "Automatically delete backups older than OLD_BACKUP_DAYS. Enable to prevent unlimited disk usage on the volume."
-  },
-  "OLD_BACKUP_DAYS": {
-    "defaultValue": "30",
-    "description": "Number of days to keep backups before deletion (only applies when DELETE_OLD_BACKUPS=true)."
-  },
-  "TZ": {
-    "defaultValue": "UTC",
-    "description": "Server timezone for cron schedules (backups, updates, reboots). Examples: America/New_York, Europe/London, Asia/Tokyo."
-  }
+  "variables": [
+    {
+      "name": "ADMIN_PASSWORD",
+      "defaultValue": "${{secret(16)}}",
+      "description": "REQUIRED. Admin password for RCON and REST API access. Auto-generated per deployment — copy the generated value from the service's Variables tab after deploy. Change it to your own to keep access stable across redeploys.",
+      "isOptional": false
+    },
+    {
+      "name": "PLAYERS",
+      "defaultValue": "16",
+      "description": "Maximum number of players allowed to connect simultaneously (1-32). Each player slot consumes additional memory — 4GB RAM recommended for 16+ players.",
+      "isOptional": true
+    },
+    {
+      "name": "SERVER_NAME",
+      "defaultValue": "My Palworld Server",
+      "description": "Name shown in the Palworld server browser. Leave as-is for default or customize to help friends find your server.",
+      "isOptional": true
+    },
+    {
+      "name": "SERVER_PASSWORD",
+      "defaultValue": "",
+      "description": "Optional password required to join the server. Leave empty for a public server, or set a password for private access.",
+      "isOptional": true
+    },
+    {
+      "name": "COMMUNITY",
+      "defaultValue": "true",
+      "description": "Show this server in the public server browser. Set to false to hide from listings (players can still connect via IP).",
+      "isOptional": true
+    },
+    {
+      "name": "PUBLIC_IP",
+      "defaultValue": "",
+      "description": "Public IP address. Leave empty for auto-detection.",
+      "isOptional": true
+    },
+    {
+      "name": "PUBLIC_PORT",
+      "defaultValue": "",
+      "description": "Public port. Leave empty to use the default game port.",
+      "isOptional": true
+    },
+    {
+      "name": "RCON_ENABLED",
+      "defaultValue": "false",
+      "description": "Enable remote console (RCON) access. Required for programmatic server management and player moderation tools.",
+      "isOptional": true
+    },
+    {
+      "name": "BACKUP_ENABLED",
+      "defaultValue": "true",
+      "description": "Enable automated world backups to the persistent volume. Backups run on a daily schedule by default.",
+      "isOptional": true
+    },
+    {
+      "name": "DELETE_OLD_BACKUPS",
+      "defaultValue": "false",
+      "description": "Automatically delete backups older than OLD_BACKUP_DAYS. Enable to prevent unlimited disk usage on the volume.",
+      "isOptional": true
+    },
+    {
+      "name": "OLD_BACKUP_DAYS",
+      "defaultValue": "30",
+      "description": "Number of days to keep backups before deletion (only applies when DELETE_OLD_BACKUPS=true).",
+      "isOptional": true
+    },
+    {
+      "name": "TZ",
+      "defaultValue": "UTC",
+      "description": "Server timezone for backup schedules.",
+      "isOptional": true
+    }
+  ]
 }
