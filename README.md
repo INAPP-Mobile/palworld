@@ -1,6 +1,6 @@
 # Deploy and Host
 
-[![Deploy on Railway](https://railway.app/button.svg)](https://railway.com/deploy/UoUhMT)
+[![Deploy on Railway](https://railway.app/button.svg)](https://railway.com/deploy/palworld)
 
 Palworld Dedicated Server — one-click deploy with persistent volume, REST API, automated backups, and zero-downtime updates. Powered by [thijsvanloef/palworld-server-docker](https://github.com/thijsvanloef/palworld-server-docker).
 
@@ -24,6 +24,10 @@ Key environment variables:
 | `RCON_ENABLED` | `false` | Enable remote console |
 | `BACKUP_ENABLED` | `true` | Auto-backup world saves |
 | `TZ` | `UTC` | Server timezone |
+
+## Storage Requirements
+
+The Palworld server requires **at least 10 GB of persistent storage** for the base installation. The initial game download via SteamCMD is ~5 GB, and world saves, backups, and mods increase over time. Railway provisions a volume automatically, but you may need to upgrade from the default 5 GB plan limit if you plan to run long-term with backups enabled.
 
 ## Why Deploy
 
