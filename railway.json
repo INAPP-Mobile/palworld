@@ -11,5 +11,11 @@
     "healthcheckTimeout": 300,
     "restartPolicyType": "ON_FAILURE",
     "restartPolicyMaxRetries": 10
+  },
+  "volumes": {
+    "palworld-data": {
+      "mountPath": "/palworld",
+      "size": 10
+    }
   }
 }
