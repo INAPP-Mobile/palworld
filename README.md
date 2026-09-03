@@ -1,6 +1,6 @@
 # Palworld Dedicated Server on Railway
 
-[![Deploy to Railway](https://railway.app/button.svg)](https://railway.com/deploy/palworld)
+[![Deploy to Railway](https://railway.app/button.svg)](https://railway.com/deploy/UoUhMT)
 
 Host your own Palworld dedicated server on Railway with automated backups, REST API access, and automatic updates. Powered by [thijsvanloef/palworld-server-docker](https://github.com/thijsvanloef/palworld-server-docker).
 
