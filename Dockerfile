@@ -11,7 +11,7 @@
 #   4. Expose the REST API on a known TCP port for Railway healthcheck
 #      (Railway doesn't support UDP healthchecks, so we use the REST API
 #      on port 8212 as an HTTP sidecar healthcheck)
-FROM thijsvanloef/palworld-server-docker:v2.7.3
+FROM thijsvanloef/palworld-server-docker:v2.8.0
 
 USER root
 
